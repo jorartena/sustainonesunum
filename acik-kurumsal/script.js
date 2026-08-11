@@ -207,17 +207,26 @@ window.addEventListener('hashchange', () => {
 // Count-up animation for numeric card values on the costs/summary slides
 function animateCounts(slideEl) {
   slideEl.querySelectorAll('.summary .card h3').forEach((el) => {
-    const text = el.textContent;
+    // Always animate toward the original final text, cached once, so that a
+    // MutationObserver re-trigger mid-animation (e.g. from class churn during
+    // a slide transition) can't re-read an in-progress value as the new target.
+    if (!el.dataset.finalText) el.dataset.finalText = el.textContent;
+    const text = el.dataset.finalText;
     const num = parseInt(text.replace(/\D/g, ''), 10);
     if (!num) return;
+    if (el.dataset.counting === '1') return; // already animating toward the correct target
+    el.dataset.counting = '1';
     let start = 0;
     const step = Math.max(1, Math.round(num / 40));
-    el.dataset.finalText = text;
     const tick = () => {
       start = Math.min(num, start + step);
       el.textContent = text.replace(/[\d.]+/, start.toLocaleString('tr-TR'));
-      if (start < num) requestAnimationFrame(tick);
-      else el.textContent = text;
+      if (start < num) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = text;
+        el.dataset.counting = '0';
+      }
     };
     tick();
   });
