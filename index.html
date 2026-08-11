@@ -3,31 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SustainOne — Sunum Temaları</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>SustainOne — Yatırımcı Sunumu</title>
+  <link rel="stylesheet" href="acik-kurumsal/style.css" />
 </head>
 <body>
-  <main>
-    <p class="eyebrow">SustainOne — Dahili Seçim Sayfası</p>
-    <h1>Hangi temayı göndereceksin?</h1>
-    <p class="lead">Aşağıdaki üç tema aynı 8 slaytı farklı görsel dille sunar. Yatırımcıya bu sayfa değil, seçtiğin tema linki gider.</p>
-    <div class="options">
-      <a class="option koyu" href="koyu-teknik/">
-        <span class="swatch"></span>
-        <h2>Koyu Teknik</h2>
-        <p>Fintech/climate-SaaS dashboard hissi, glitch geçişler.</p>
-      </a>
-      <a class="option acik" href="acik-kurumsal/">
-        <span class="swatch"></span>
-        <h2>Açık Kurumsal</h2>
-        <p>Temiz, güven veren kurumsal rapor hissi.</p>
-      </a>
-      <a class="option organik" href="organik-editoryal/">
-        <span class="swatch"></span>
-        <h2>Organik Editoryal</h2>
-        <p>Büyük tipografi, sıcak, hikaye anlatımı.</p>
-      </a>
-    </div>
-  </main>
+  <div id="progress-bar"></div>
+  <main id="deck"></main>
+  <div id="chrome">
+    <nav id="nav-dots" aria-label="Slayt navigasyonu"></nav>
+    <div id="slide-counter"></div>
+  </div>
+  <script type="module" src="acik-kurumsal/script.js"></script>
 </body>
 </html>

@@ -19,4 +19,8 @@ const costs = deck.slides.find((s) => s.id === 'costs');
 assert.equal(costs.detailRows.length, 13, 'costs detail must have 13 rows including TOPLAM');
 assert.equal(costs.summary.length, 3, 'costs summary must have 3 cards');
 
+const modules = deck.slides.find((s) => s.id === 'modules');
+assert.equal(modules.cards.length, 5, 'modules slide must have five cards');
+assert.match(modules.title, /^Beş modül/);
+
 console.log('content.js OK: 8 slides, kinds match, costs table intact.');

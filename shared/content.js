@@ -82,7 +82,7 @@ export const deck = {
     {
       id: 'modules',
       kind: 'cards',
-      title: 'Altı modül, uçtan uca çalışan tek platform.',
+      title: 'Beş modül, uçtan uca çalışan tek platform.',
       intro: 'Modüller uçtan uca gezilebilir durumda; veri katmanı şu an gerçek entegrasyona geçiş aşamasında.',
       cards: [
         { label: 'Çevre & Karbon', detail: 'Kapsam 1-2-3 emisyon takibi, dönemsel kıyaslama; fatura yükleme ile tüketim/maliyet takibi.' },
